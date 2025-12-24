@@ -3,90 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maaheer Online Services & Credit Card to Bank Transfer Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Maaheer Online Services & CC to Bank Transfer Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #050a30;    /* Deep Navy Blue */
-            --accent-gold: #c5a059; /* Gold Accent */
-            --whatsapp: #25d366;
-            --bg-light: #f4f7f6;
-            --white: #ffffff;
+            --primary-navy: #050a30;    /* Deep Professional Navy */
+            --accent-gold: #d4af37;     /* Metallic Gold */
+            --glass-white: rgba(255, 255, 255, 0.95);
+            --text-main: #2c3e50;
+            --whatsapp-green: #25d366;
         }
 
-        body { font-family: 'Poppins', sans-serif; background: var(--bg-light); margin: 0; color: var(--primary); }
-        
-        /* Navigation */
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            background: radial-gradient(circle at top, #0a1045, #050a30); /* Professional Deep Gradient */
+            margin: 0; 
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 { 
+            font-family: 'Montserrat', sans-serif; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+
+        /* Modern Navigation */
         nav { 
-            background: var(--primary); 
-            padding: 12px 20px; 
-            color: var(--white); 
+            background: rgba(5, 10, 48, 0.8);
+            backdrop-filter: blur(10px); /* Glass effect */
+            padding: 15px 30px; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            border-bottom: 3px solid var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
         }
-        
-        .logo-container { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-        .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent-gold); object-fit: cover; }
-        .logo-text { font-weight: 700; font-size: 1rem; letter-spacing: 0.5px; color: var(--white); text-transform: uppercase; }
 
-        /* Page Management */
-        .page { display: none; padding: 20px; max-width: 1100px; margin: auto; }
-        .active { display: block; animation: slideUp 0.4s ease-out; }
+        .logo-container { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--accent-gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+        .logo-text { font-size: 1.1rem; color: white; font-weight: 800; }
 
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Hero Section */
+        .hero { 
+            text-align: center; 
+            padding: 80px 20px; 
+            color: white;
+        }
+        .hero h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            background: linear-gradient(to right, #ffffff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.2rem; opacity: 0.8; font-weight: 300; }
 
-        /* Hero */
-        .hero { text-align: center; padding: 60px 20px; background: white; margin-bottom: 30px; border-bottom: 1px solid #ddd; }
-        .hero h1 { color: var(--primary); font-size: 1.8rem; line-height: 1.3; margin-bottom: 10px; }
-        .hero p { color: #666; font-size: 1.1rem; max-width: 700px; margin: auto; }
-        
-        /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px 60px; }
+
+        /* Professional Service Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .card { 
-            background: var(--white); 
-            padding: 30px; 
+            background: var(--glass-white); 
             border-radius: 20px; 
-            text-align: center; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
         }
 
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(5, 10, 48, 0.15); border-color: var(--accent-gold); }
-        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-        .card:hover i { color: var(--accent-gold); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .card:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-        /* Detail Styling */
-        .detail-header { background: var(--primary); color: white; padding: 40px; border-radius: 20px; margin-bottom: 25px; text-align: center; border-bottom: 5px solid var(--accent-gold); }
-        .info-box { background: white; padding: 35px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        
-        .service-list { list-style: none; padding: 0; text-align: left; }
-        .service-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; font-weight: 500; }
-        .service-list li i { color: var(--accent-gold); margin-right: 15px; }
-        
+        .card-img-wrapper { position: relative; height: 200px; overflow: hidden; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card:hover .card-img { transform: scale(1.1); }
+
+        .card-body { padding: 25px; text-align: center; }
+        .card-body i { color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 10px; }
+        .card h3 { color: var(--primary-navy); margin: 10px 0; font-size: 1.2rem; }
+
+        /* Detail View Glass Effect */
+        .detail-card { 
+            background: var(--glass-white); 
+            border-radius: 30px; 
+            overflow: hidden; 
+            max-width: 800px; 
+            margin: 40px auto;
+        }
+        .detail-header { background: var(--primary-navy); color: white; padding: 40px; text-align: center; }
+        .detail-content { padding: 40px; }
+
+        .service-list li { 
+            padding: 15px 0; 
+            border-bottom: 1px solid #eee; 
+            display: flex; 
+            align-items: center; 
+            font-size: 1.1rem;
+        }
+        .service-list i { color: var(--accent-gold); margin-right: 15px; }
+
+        /* Professional Buttons */
         .btn-whatsapp { 
-            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-            background: var(--whatsapp); color: white; padding: 18px 30px; 
-            text-decoration: none; border-radius: 12px; font-weight: 700; margin-top: 30px; 
-            width: 100%; box-sizing: border-box; font-size: 1.1rem;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white; 
+            padding: 20px; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
 
-        .back-btn { background: var(--accent-gold); color: var(--primary); padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .back-btn { 
+            border: 1px solid var(--accent-gold); 
+            color: var(--accent-gold); 
+            padding: 10px 20px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent-gold); color: white; }
 
-        footer { text-align: center; padding: 60px 20px; background: var(--primary); color: var(--white); margin-top: 50px; }
-        .footer-logo { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--accent-gold); margin-bottom: 20px; }
+        footer { 
+            background: #02051a; 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-top: 4px solid var(--accent-gold);
+        }
+        .footer-logo { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--accent-gold); margin-bottom: 20px; }
+
+        .page { display: none; }
+        .active { display: block; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -94,143 +152,81 @@
 <nav>
     <div class="logo-container" onclick="showPage('home')">
         <img src="logo.jpg" alt="Logo" class="logo-img">
-        <div class="logo-text">Maaheer Agency</div>
+        <div class="logo-text">MAAHEER AGENCY</div>
     </div>
-    <a href="#" class="back-btn" onclick="showPage('home')">HOME</a>
+    <a href="#" class="back-btn" onclick="showPage('home')">BACK TO HUB</a>
 </nav>
 
 <div id="home" class="page active">
     <div class="hero">
-        <h1>Maaheer Online Services & <br> Credit Card to Bank Transfer Agency</h1>
-        <p>Your Authorised Partner for Financial Transfers & Digital Documentation</p>
+        <h1>MAAHEER ONLINE SERVICES</h1>
+        <p>Premium Financial Transfers & Digital Documentation Agency</p>
     </div>
     
-    <div class="grid">
-        <div class="card" onclick="showPage('agency')">
-            <i class="fa-solid fa-building-columns"></i>
-            <h3>CC to Bank Agency</h3>
-            <p>Retailer ID Provision & Instant Card Transfers</p>
-        </div>
+    <div class="container">
+        <div class="grid">
+            <div class="card" onclick="showPage('agency')">
+                <div class="card-img-wrapper"><img src="agency.jpg" class="card-img" alt="Agency"></div>
+                <div class="card-body">
+                    <i class="fa-solid fa-crown"></i>
+                    <h3>CC TO BANK AGENCY</h3>
+                </div>
+            </div>
 
-        <div class="card" onclick="showPage('adhar')">
-            <i class="fa-solid fa-fingerprint"></i>
-            <h3>Aadhar Services</h3>
-            <p>Downloads & Address Corrections</p>
-        </div>
+            <div class="card" onclick="showPage('adhar')">
+                <div class="card-img-wrapper"><img src="adhar.jpg" class="card-img" alt="Aadhar"></div>
+                <div class="card-body">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <h3>AADHAR SERVICES</h3>
+                </div>
+            </div>
 
-        <div class="card" onclick="showPage('pan')">
-            <i class="fa-solid fa-address-card"></i>
-            <h3>PAN Services</h3>
-            <p>New Apply, Corrections & Linking</p>
-        </div>
-
-        <div class="card" onclick="showPage('voter')">
-            <i class="fa-solid fa-id-badge"></i>
-            <h3>Voter Card</h3>
-            <p>Registration & Digital Downloads</p>
-        </div>
-
-        <div class="card" onclick="showPage('insurance')">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>Vehicle Insurance</h3>
-            <p>Bike, Car & All Commercial Vehicles</p>
-        </div>
-
-        <div class="card" onclick="showPage('govt')">
-            <i class="fa-solid fa-file-invoice"></i>
-            <h3>Passport & Govt</h3>
-            <p>Passport, RC, DL & E-Shram</p>
-        </div>
+            <div class="card" onclick="showPage('pan')">
+                <div class="card-img-wrapper"><img src="pan.jpg" class="card-img" alt="PAN"></div>
+                <div class="card-body">
+                    <i class="fa-solid fa-address-card"></i>
+                    <h3>PAN CARD HUB</h3>
+                </div>
+            </div>
+            
+            </div>
     </div>
 </div>
 
 <div id="agency" class="page">
-    <div class="detail-header">
-        <h2>Credit Card to Bank Transfer Agency</h2>
-    </div>
-    <div class="info-box">
-        <h3>Agency Services:</h3>
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> Instant CC to Bank Transfer</li>
-            <li><i class="fa-solid fa-circle-check"></i> Retailer ID Provision</li>
-            <li><i class="fa-solid fa-circle-check"></i> Business Dashboard Access</li>
-            <li><i class="fa-solid fa-circle-check"></i> Low Commission Rates</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=I%20want%20to%20apply%20for%20a%20Retailer%20ID%20Agency" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> Become a Retailer Today
-        </a>
-    </div>
-</div>
-
-<div id="adhar" class="page">
-    <div class="detail-header"><h2>Aadhar Services</h2></div>
-    <div class="info-box">
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> Aadhar Download</li>
-            <li><i class="fa-solid fa-circle-check"></i> Address Change Online</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=Need%20Aadhar%20Help" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-    </div>
-</div>
-
-<div id="pan" class="page">
-    <div class="detail-header"><h2>PAN Card Services</h2></div>
-    <div class="info-box">
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> New PAN Card Apply</li>
-            <li><i class="fa-solid fa-circle-check"></i> PAN Correction & e-PAN</li>
-            <li><i class="fa-solid fa-circle-check"></i> Aadhar Link & PAN Find</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=Need%20PAN%20Service" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-    </div>
-</div>
-
-<div id="voter" class="page">
-    <div class="detail-header"><h2>Voter Services</h2></div>
-    <div class="info-box">
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> New Apply & Correction</li>
-            <li><i class="fa-solid fa-circle-check"></i> Mobile Linking & Download</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=Voter%20Card%20Inquiry" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-    </div>
-</div>
-
-<div id="insurance" class="page">
-    <div class="detail-header"><h2>Vehicle Insurance</h2></div>
-    <div class="info-box">
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> Bike / Car Insurance</li>
-            <li><i class="fa-solid fa-circle-check"></i> Auto & Commercial Vehicles</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=Need%20Insurance%20Quote" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Get Quote</a>
-    </div>
-</div>
-
-<div id="govt" class="page">
-    <div class="detail-header"><h2>Passport & Govt Services</h2></div>
-    <div class="info-box">
-        <ul class="service-list">
-            <li><i class="fa-solid fa-circle-check"></i> New Passport & Renewal</li>
-            <li><i class="fa-solid fa-circle-check"></i> E-Shram & Ayushman Bharat</li>
-            <li><i class="fa-solid fa-circle-check"></i> RC & Driving Licence Download</li>
-        </ul>
-        <a href="https://wa.me/919494133921?text=Govt%20Service%20Help" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    <div class="container">
+        <div class="detail-card">
+            <div class="detail-header">
+                <h2>CREDIT CARD TO BANK AGENCY</h2>
+                <p>Retailer ID & Business Solutions</p>
+            </div>
+            <div class="detail-content">
+                <ul class="service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Instant CC to Bank Transfer</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Authorized Retailer ID Provider</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 24/7 Agency Technical Support</li>
+                </ul>
+                <a href="https://wa.me/919494133921?text=Agency Inquiry" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> CONNECT WITH AGENT
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
 <footer>
     <img src="logo.jpg" alt="Logo" class="footer-logo">
-    <h3>Maaheer Online & Agency</h3>
-    <p>Proddatur, Andhra Pradesh</p>
-    <p>Contact: +91 9494133921</p>
+    <h2>MAAHEER ONLINE & AGENCY</h2>
+    <p>The Gold Standard in Digital Solutions</p>
+    <p><i class="fa-solid fa-location-dot"></i> Proddatur, Andhra Pradesh</p>
+    <p><i class="fa-solid fa-phone"></i> +91 9494133921</p>
 </footer>
 
 <script>
     function showPage(pageId) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0,0);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
 
