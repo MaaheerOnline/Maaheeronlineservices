@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: #f2f5f9;
   color: #333;
   text-align: center;
@@ -8,15 +8,15 @@ body {
 
 /* HEADER */
 .header {
-  background: linear-gradient(135deg, #003366, #0059b3);
+  background: linear-gradient(135deg, #002b5b, #004e92);
   color: white;
   padding: 35px 15px;
 }
 
 .header-inner {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 15px;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .title-box p {
-  margin: 5px 0 0;
+  margin: 4px 0 0;
   font-size: 14px;
   opacity: 0.9;
 }
@@ -50,13 +50,13 @@ body {
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 22px;
-  margin: 5px;
+  padding: 12px 24px;
   border-radius: 30px;
+  margin: 5px;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  color: #fff;
+  display: inline-block;
 }
 
 .whatsapp { background: #25d366; }
@@ -68,27 +68,27 @@ body {
 }
 
 .services h2 {
+  color: #002b5b;
   margin-bottom: 30px;
-  color: #003366;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 15px;
-  padding: 20px;
-  min-height: 220px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  border-radius: 16px;
+  padding: 22px 15px;
+  min-height: 230px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .card h3 {
-  margin: 10px 0 5px;
-  color: #0059b3;
+  margin: 10px 0 6px;
+  color: #004e92;
 }
 
 .card p {
@@ -99,8 +99,8 @@ body {
 .card a {
   display: inline-block;
   margin-top: 10px;
-  color: #0059b3;
   font-weight: bold;
+  color: #004e92;
   text-decoration: none;
 }
 
@@ -109,19 +109,19 @@ body {
   width: 60px;
   height: 60px;
   margin: 0 auto 12px;
-  background: #f2f5f9;
+  background: #eef3f8;
   border-radius: 50%;
   font-size: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
 }
 
 /* WHY */
 .why {
-  background: #fff;
-  padding: 35px 20px;
+  background: #ffffff;
+  padding: 40px 20px;
 }
 
 .why ul {
@@ -136,18 +136,33 @@ body {
 
 /* CONTACT */
 .contact {
-  padding: 35px 20px;
+  padding: 40px 20px;
 }
 
 /* FOOTER */
-footer {
-  background: #003366;
-  color: #fff;
-  padding: 15px;
-  font-size: 14px;
+.footer {
+  background: linear-gradient(135deg, #001a33, #002b5b);
+  color: #e0e0e0;
+  padding: 30px 15px;
 }
 
-.disclaimer {
+.footer-box {
+  max-width: 600px;
+  margin: auto;
+}
+
+.footer h3 {
+  margin: 0 0 5px;
+  color: #ffffff;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 15px 0;
+}
+
+.footer .small {
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
