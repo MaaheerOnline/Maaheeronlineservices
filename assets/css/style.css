@@ -194,19 +194,20 @@ footer {
 }
 /* SERVICE ICON CENTER */
 .service-icon {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   display: block;
   margin: 0 auto 12px;
 
-  /* icon visibility fix */
+  /* IMPORTANT FIX */
   object-fit: contain;
-  background: #ffffff;          /* white circle */
-  padding: 10px;
+  background: #f2f5f9;      /* light grey background */
+  padding: 12px;
   border-radius: 50%;
 
-  /* light shadow so white icons visible */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  /* border & shadow for visibility */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* CARD CONTENT CENTER */
