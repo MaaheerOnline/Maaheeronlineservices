@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <html lang="te">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MAAHEER Online Services</title>
-
-  <!-- Title logo (favicon) -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="maaheer-logo.png">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f2f4f8;
     }
 
-    /* Header */
-    .header {
-      background: #0b3c5d;
-      color: #fff;
+    /* ===== PROFESSIONAL HEADER ===== */
+    .pro-header {
+      background: linear-gradient(135deg, #0b3c5d, #06263d);
+      padding: 18px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 15px;
+      gap: 14px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .header img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: #fff;
-      padding: 4px;
+    .brand img {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 6px;
     }
 
-    .header-text {
-      text-align: left;
-    }
-
-    .header-text h1 {
+    .brand-text h1 {
       margin: 0;
-      font-size: 22px;
-      letter-spacing: 1px;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 2px;
     }
 
-    .header-text p {
-      margin: 0;
+    .brand-text span {
+      display: block;
       font-size: 12px;
-      opacity: 0.9;
+      color: #cfd8dc;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
     }
 
-    /* Cards */
+    /* ===== SERVICES CARDS ===== */
     .container {
-      padding: 20px;
+      padding: 22px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      gap: 16px;
+      margin-bottom: 80px;
     }
 
     .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 15px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      font-size: 15px;
       font-weight: bold;
+      color: #0b3c5d;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    /* Bottom bar */
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ===== BOTTOM BAR ===== */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -88,37 +87,39 @@
       background: #0b3c5d;
       display: flex;
       justify-content: space-around;
-      padding: 10px 0;
-      color: #fff;
+      padding: 12px 0;
+      color: #ffffff;
     }
 
     .bottom-bar a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER WITH LOGO -->
-  <div class="header">
-    <img src="logo.png" alt="Maaheer Logo">
-    <div class="header-text">
-      <h1>MAAHEER</h1>
-      <p>ONLINE SERVICES</p>
+  <!-- HEADER -->
+  <div class="pro-header">
+    <div class="brand">
+      <img src="maaheer-logo.png" alt="Maaheer Logo">
+      <div class="brand-text">
+        <h1>MAAHEER</h1>
+        <span>ONLINE SERVICES</span>
+      </div>
     </div>
   </div>
 
   <!-- SERVICES -->
   <div class="container">
-    <div class="card"><p>పాన్ కార్డ్ సేవలు</p></div>
-    <div class="card"><p>ఆధార్ కార్డ్ సేవలు</p></div>
-    <div class="card"><p>ఓటర్ ఐడీ సేవలు</p></div>
-    <div class="card"><p>వాహన RC సేవలు</p></div>
-    <div class="card"><p>డ్రైవింగ్ లైసెన్స్ సేవలు</p></div>
-    <div class="card"><p>వాహన బీమా సేవలు</p></div>
+    <div class="card">పాన్ కార్డ్ సేవలు</div>
+    <div class="card">ఆధార్ కార్డ్ సేవలు</div>
+    <div class="card">ఓటర్ ఐడీ సేవలు</div>
+    <div class="card">వాహన RC సేవలు</div>
+    <div class="card">డ్రైవింగ్ లైసెన్స్ సేవలు</div>
+    <div class="card">వాహన బీమా సేవలు</div>
   </div>
 
   <!-- BOTTOM BAR -->
