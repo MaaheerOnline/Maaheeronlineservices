@@ -97,8 +97,8 @@ body {
 }
 
 .services h2 {
-  margin-bottom: 25px;
-  color: #003366;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
 .grid {
@@ -115,7 +115,10 @@ body {
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
-
+.card a:hover {
+  color: #003366;
+  text-decoration: underline;
+}
 .card h3 {
   margin-top: 0;
   color: #0059b3;
