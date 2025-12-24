@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MAAHEER Online Services</title>
-
-  <!-- STEP 2: FAVICON FIX -->
   <link rel="icon" type="image/png" href="./maaheer-logo.png">
 
   <style>
@@ -16,7 +14,7 @@
       background: #f2f4f8;
     }
 
-    /* ===== PROFESSIONAL HEADER ===== */
+    /* ===== HEADER ===== */
     .pro-header {
       background: linear-gradient(135deg, #0b3c5d, #06263d);
       padding: 18px 20px;
@@ -31,7 +29,6 @@
       margin: auto;
     }
 
-    /* STEP 1 CSS + PREMIUM LOOK */
     .brand img {
       width: 56px;
       height: 56px;
@@ -54,25 +51,32 @@
       font-size: 12px;
       color: #cfd8dc;
       letter-spacing: 1.5px;
-      margin-top: 2px;
     }
 
-    /* ===== SERVICES ===== */
+    /* TAGLINE */
+    .tagline {
+      text-align: center;
+      margin: 16px;
+      font-weight: bold;
+      color: #0b3c5d;
+    }
+
+    /* SERVICES */
     .container {
-      padding: 22px;
+      padding: 16px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 80px;
+      gap: 14px;
+      margin-bottom: 20px;
     }
 
     .card {
       background: #ffffff;
       border-radius: 14px;
-      padding: 18px 10px;
+      padding: 18px 8px;
       text-align: center;
       box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: bold;
       color: #0b3c5d;
       cursor: pointer;
@@ -83,7 +87,18 @@
       transform: translateY(-4px);
     }
 
-    /* ===== BOTTOM BAR ===== */
+    /* TRUST */
+    .trust {
+      background: #ffffff;
+      margin: 16px;
+      padding: 14px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* BOTTOM BAR */
     .bottom-bar {
       position: fixed;
       bottom: 0;
@@ -108,7 +123,6 @@
   <!-- HEADER -->
   <div class="pro-header">
     <div class="brand">
-      <!-- STEP 1: IMAGE SRC FIX + ALT EMPTY -->
       <img src="./maaheer-logo.png" alt="">
       <div class="brand-text">
         <h1>MAAHEER</h1>
@@ -117,14 +131,27 @@
     </div>
   </div>
 
+  <!-- TAGLINE -->
+  <div class="tagline">
+    అన్ని ఆన్‌లైన్ సేవలు ఒకే చోట
+  </div>
+
   <!-- SERVICES -->
   <div class="container">
-    <div class="card">పాన్ కార్డ్ సేవలు</div>
-    <div class="card">ఆధార్ కార్డ్ సేవలు</div>
-    <div class="card">ఓటర్ ఐడీ సేవలు</div>
-    <div class="card">వాహన RC సేవలు</div>
-    <div class="card">డ్రైవింగ్ లైసెన్స్ సేవలు</div>
-    <div class="card">వాహన బీమా సేవలు</div>
+    <div class="card" onclick="wa('PAN Card')">పాన్ కార్డ్ సేవలు</div>
+    <div class="card" onclick="wa('Aadhaar Card')">ఆధార్ కార్డ్ సేవలు</div>
+    <div class="card" onclick="wa('Voter ID')">ఓటర్ ఐడీ సేవలు</div>
+    <div class="card" onclick="wa('Vehicle RC')">వాహన RC సేవలు</div>
+    <div class="card" onclick="wa('Driving Licence')">డ్రైవింగ్ లైసెన్స్ సేవలు</div>
+    <div class="card" onclick="wa('Vehicle Insurance')">వాహన బీమా సేవలు</div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    ✅ 100% Genuine Services<br>
+    ✅ Fast & Secure Process<br>
+    ✅ Low Service Charges<br>
+    ✅ Local Support – Proddatur
   </div>
 
   <!-- BOTTOM BAR -->
@@ -132,6 +159,16 @@
     <a href="tel:9494133921">📞 కాల్</a>
     <a href="https://wa.me/919494133921">💬 వాట్సాప్</a>
   </div>
+
+  <!-- WHATSAPP SCRIPT -->
+  <script>
+    function wa(service) {
+      window.open(
+        "https://wa.me/919494133921?text=Hello,%20I%20need%20" + service + "%20service",
+        "_blank"
+      );
+    }
+  </script>
 
 </body>
 </html>
