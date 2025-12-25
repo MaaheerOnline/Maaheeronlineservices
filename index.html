@@ -4,7 +4,190 @@
 <meta charset="UTF-8">
 <title>Maaheer Online Services | Proddatur</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+/* ===== BASIC ===== */
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f9;
+}
+
+/* ===== HEADER ===== */
+.main-header{
+  background:linear-gradient(135deg,#081a2f,#0b2d52);
+  text-align:center;
+  padding:25px 15px 30px;
+}
+
+.logo-wrapper{
+  width:90px;
+  height:90px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:50%;
+  padding:5px;
+}
+
+.logo-wrapper img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.site-title{
+  color:#fff;
+  margin-top:12px;
+  font-size:22px;
+}
+
+.site-subtitle{
+  color:#d6e4ff;
+  font-size:13px;
+}
+
+.buttons{
+  margin-top:15px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:25px;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  margin:5px;
+  display:inline-block;
+}
+
+.whatsapp{background:#25D366;}
+.call{background:#ff9800;}
+
+/* ===== SERVICES ===== */
+.services{
+  padding:25px 15px;
+  text-align:center;
+}
+
+.services h2{
+  margin-bottom:20px;
+  color:#0b2d52;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:18px 10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.icon-circle{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#eef3ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 10px;
+  font-size:22px;
+}
+
+.card h3{
+  font-size:14px;
+  margin:5px 0;
+}
+
+.card p{
+  font-size:12px;
+  color:#666;
+}
+
+/* ===== MODAL ===== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:999;
+}
+
+.modal-content{
+  background:#fff;
+  width:90%;
+  max-width:320px;
+  margin:30% auto;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.close{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.modal h3{
+  margin-top:5px;
+  color:#0b2d52;
+}
+
+.modal-buttons a{
+  display:block;
+  margin:10px 0;
+  padding:12px;
+  border-radius:8px;
+  background:#0b2d52;
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:#081a2f;
+  color:#fff;
+  text-align:center;
+  padding:20px 10px;
+  margin-top:30px;
+}
+
+.footer p{
+  font-size:13px;
+  margin:5px 0;
+}
+
+/* ===== FLOATING WHATSAPP ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  text-decoration:none;
+}
+</style>
 </head>
 
 <body>
@@ -14,7 +197,6 @@
   <div class="logo-wrapper">
     <img src="assets/images/logo.png" alt="Maaheer Online Services">
   </div>
-
   <h1 class="site-title">Maaheer Online Services</h1>
   <p class="site-subtitle">Digital & Online Services Center</p>
 
@@ -26,101 +208,68 @@
 
 <!-- SERVICES -->
 <section class="services">
-  <h2>Our Services</h2>
+<h2>Our Services</h2>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="icon-circle">🆔</div>
-      <h3>Aadhaar Services</h3>
-      <p>Download • Update • Correction</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">💳</div>
-      <h3>PAN Card Services</h3>
-      <p>New • Correction • ePAN</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🗳️</div>
-      <h3>Voter ID Services</h3>
-      <p>Apply • Correction • Download</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🚗</div>
-      <h3>RC & Driving Licence</h3>
-      <p>RC • DL Download</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🛡️</div>
-      <h3>Vehicle Insurance</h3>
-      <p>Bike • Car • Auto</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🛂</div>
-      <h3>Passport Services</h3>
-      <p>Apply • Renewal</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">👷</div>
-      <h3>E-Shram Card</h3>
-      <p>Apply • Download</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🏥</div>
-      <h3>Ayushman Card</h3>
-      <p>Apply • Download</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🏦</div>
-      <h3>Credit Card to Bank Transfer</h3>
-      <p>Fast • Secure Transfer</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-    <div class="card">
-      <div class="icon-circle">🧾</div>
-      <h3>Retailer ID</h3>
-      <p>CC to Bank Service</p>
-      <a href="https://wa.me/919494133921">Apply Now</a>
-    </div>
-
-  </div>
+<div class="grid">
+  <div class="card" onclick="openService('Aadhaar Services')"><div class="icon-circle">🆔</div><h3>Aadhaar Services</h3><p>Apply • Update • Download</p></div>
+  <div class="card" onclick="openService('PAN Card Services')"><div class="icon-circle">💳</div><h3>PAN Card</h3><p>Apply • Correction</p></div>
+  <div class="card" onclick="openService('Voter ID Services')"><div class="icon-circle">🗳️</div><h3>Voter ID</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('RC & Driving Licence')"><div class="icon-circle">🚗</div><h3>RC & DL</h3><p>Download</p></div>
+  <div class="card" onclick="openService('Vehicle Insurance')"><div class="icon-circle">🛡️</div><h3>Insurance</h3><p>Bike • Car</p></div>
+  <div class="card" onclick="openService('Passport Services')"><div class="icon-circle">🛂</div><h3>Passport</h3><p>Apply • Renewal</p></div>
+  <div class="card" onclick="openService('E-Shram Card')"><div class="icon-circle">👷</div><h3>E-Shram</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('Ayushman Card')"><div class="icon-circle">🏥</div><h3>Ayushman</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('Credit Card to Bank Transfer')"><div class="icon-circle">🏦</div><h3>CC to Bank</h3><p>Secure Transfer</p></div>
+  <div class="card" onclick="openService('Retailer ID')"><div class="icon-circle">🧾</div><h3>Retailer ID</h3><p>CC Service</p></div>
+</div>
 </section>
+
+<!-- MODAL -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeService()">&times;</span>
+    <h3 id="serviceTitle"></h3>
+    <div class="modal-buttons">
+      <a id="applyBtn" target="_blank">Apply</a>
+      <a id="downloadBtn" target="_blank">Download</a>
+      <a id="updateBtn" target="_blank">Update / Correction</a>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-box">
-    <h3>Maaheer Online Services</h3>
-    <p>Digital & Financial Assistance Services</p>
-    <p>📞 94941 33921</p>
-    <p>📍 Proddatur, Andhra Pradesh</p>
-    <hr>
-    <p class="small">
-      © 2025 Maaheer Online Services<br>
-      This is not an official government website.<br>
-      We provide assistance services only.
-    </p>
-  </div>
+  <p><strong>Maaheer Online Services</strong></p>
+  <p>📞 94941 33921</p>
+  <p>📍 Proddatur, Andhra Pradesh</p>
+  <p>© 2025 – Assistance Services Only</p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919494133921" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/919494133921" class="whatsapp-float">💬</a>
+
+<!-- SCRIPT -->
+<script>
+function openService(service){
+  document.getElementById("serviceModal").style.display="block";
+  document.getElementById("serviceTitle").innerText = service;
+
+  let msg = "Hello Maaheer Online Services, I need " + service + ". Please guide me.";
+
+  document.getElementById("applyBtn").href =
+    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Apply");
+
+  document.getElementById("downloadBtn").href =
+    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Download");
+
+  document.getElementById("updateBtn").href =
+    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Update");
+}
+
+function closeService(){
+  document.getElementById("serviceModal").style.display="none";
+}
+</script>
 
 </body>
 </html>
