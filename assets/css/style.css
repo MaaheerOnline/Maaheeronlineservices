@@ -13,23 +13,43 @@ body {
   padding: 35px 15px;
 }
 .main-header {
-  background: #0a1a2f;
-  padding: 20px;
-  text-align: center;
-}
-.main-header {
-  background: linear-gradient(135deg, #0a1a2f, #003366);
-  padding: 25px 15px;
+  background: linear-gradient(135deg, #081a2f, #0b2d52);
+  padding: 20px 15px 30px;
   text-align: center;
 }
 
-.logo-box img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;        /* ROUND LOGO */
-  border: 4px solid #ffffff;
-  object-fit: cover;
-  background: #fff;
+/* LOGO CONTAINER */
+.logo-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 6px;
+}
+
+/* LOGO IMAGE */
+.logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;     /* ROUND FIX */
+  object-fit: cover;     /* image stretch avvakunda */
+  display: block;
+}
+
+/* TITLE */
+.site-title {
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* SUB TITLE */
+.site-subtitle {
+  font-size: 13px;
+  color: #d6e4ff;
+  margin-top: 4px;
 }
 
 .site-title {
