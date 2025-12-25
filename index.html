@@ -211,16 +211,16 @@ body{
 <h2>Our Services</h2>
 
 <div class="grid">
-  <div class="card" onclick="openService('Aadhaar Services')"><div class="icon-circle">🆔</div><h3>Aadhaar Services</h3><p>Apply • Update • Download</p></div>
-  <div class="card" onclick="openService('PAN Card Services')"><div class="icon-circle">💳</div><h3>PAN Card</h3><p>Apply • Correction</p></div>
-  <div class="card" onclick="openService('Voter ID Services')"><div class="icon-circle">🗳️</div><h3>Voter ID</h3><p>Apply • Download</p></div>
-  <div class="card" onclick="openService('RC & Driving Licence')"><div class="icon-circle">🚗</div><h3>RC & DL</h3><p>Download</p></div>
-  <div class="card" onclick="openService('Vehicle Insurance')"><div class="icon-circle">🛡️</div><h3>Insurance</h3><p>Bike • Car</p></div>
-  <div class="card" onclick="openService('Passport Services')"><div class="icon-circle">🛂</div><h3>Passport</h3><p>Apply • Renewal</p></div>
-  <div class="card" onclick="openService('E-Shram Card')"><div class="icon-circle">👷</div><h3>E-Shram</h3><p>Apply • Download</p></div>
-  <div class="card" onclick="openService('Ayushman Card')"><div class="icon-circle">🏥</div><h3>Ayushman</h3><p>Apply • Download</p></div>
-  <div class="card" onclick="openService('Credit Card to Bank Transfer')"><div class="icon-circle">🏦</div><h3>CC to Bank</h3><p>Secure Transfer</p></div>
-  <div class="card" onclick="openService('Retailer ID')"><div class="icon-circle">🧾</div><h3>Retailer ID</h3><p>CC Service</p></div>
+  <div class="card" onclick="openService('aadhaar')"><div class="icon-circle">🆔</div><h3>Aadhaar</h3><p>Apply • Update • Download</p></div>
+  <div class="card" onclick="openService('pan')"><div class="icon-circle">💳</div><h3>PAN Card</h3><p>Apply • Correction</p></div>
+  <div class="card" onclick="openService('voter')"><div class="icon-circle">🗳️</div><h3>Voter ID</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('rcdl')"><div class="icon-circle">🚗</div><h3>RC & DL</h3><p>Download</p></div>
+  <div class="card" onclick="openService('insurance')"><div class="icon-circle">🛡️</div><h3>Insurance</h3><p>Apply</p></div>
+  <div class="card" onclick="openService('passport')"><div class="icon-circle">🛂</div><h3>Passport</h3><p>Apply • Renewal</p></div>
+  <div class="card" onclick="openService('eshram')"><div class="icon-circle">👷</div><h3>E-Shram</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('ayushman')"><div class="icon-circle">🏥</div><h3>Ayushman</h3><p>Apply • Download</p></div>
+  <div class="card" onclick="openService('ccbank')"><div class="icon-circle">🏦</div><h3>CC to Bank</h3><p>Transfer</p></div>
+  <div class="card" onclick="openService('retailer')"><div class="icon-circle">🧾</div><h3>Retailer ID</h3><p>Apply</p></div>
 </div>
 </section>
 
@@ -250,22 +250,45 @@ body{
 
 <!-- SCRIPT -->
 <script>
-function openService(service){
+const services = {
+  aadhaar:{title:"Aadhaar Services",options:["apply","update","download"]},
+  pan:{title:"PAN Card Services",options:["apply","update"]},
+  voter:{title:"Voter ID Services",options:["apply","download","update"]},
+  rcdl:{title:"RC & Driving Licence",options:["download"]},
+  insurance:{title:"Vehicle Insurance",options:["apply"]},
+  passport:{title:"Passport Services",options:["apply","update"]},
+  eshram:{title:"E-Shram Card",options:["apply","download"]},
+  ayushman:{title:"Ayushman Card",options:["apply","download"]},
+  ccbank:{title:"Credit Card to Bank Transfer",options:["apply"]},
+  retailer:{title:"Retailer ID",options:["apply"]}
+};
+
+function openService(key){
+  const s = services[key];
   document.getElementById("serviceModal").style.display="block";
-  document.getElementById("serviceTitle").innerText = service;
+  document.getElementById("serviceTitle").innerText = s.title;
 
-  let msg = "Hello Maaheer Online Services, I need " + service + ". Please guide me.";
+  const a=document.getElementById("applyBtn"),
+        d=document.getElementById("downloadBtn"),
+        u=document.getElementById("updateBtn");
 
-  document.getElementById("applyBtn").href =
-    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Apply");
+  a.style.display=d.style.display=u.style.display="none";
 
-  document.getElementById("downloadBtn").href =
-    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Download");
+  let base="Hello Maaheer Online Services, I need "+s.title+". ";
 
-  document.getElementById("updateBtn").href =
-    "https://wa.me/919494133921?text=" + encodeURIComponent(msg + " Update");
+  if(s.options.includes("apply")){
+    a.style.display="block";
+    a.href="https://wa.me/919494133921?text="+encodeURIComponent(base+"I want to Apply.");
+  }
+  if(s.options.includes("download")){
+    d.style.display="block";
+    d.href="https://wa.me/919494133921?text="+encodeURIComponent(base+"I want to Download.");
+  }
+  if(s.options.includes("update")){
+    u.style.display="block";
+    u.href="https://wa.me/919494133921?text="+encodeURIComponent(base+"I need Update / Correction.");
+  }
 }
-
 function closeService(){
   document.getElementById("serviceModal").style.display="none";
 }
